@@ -1,10 +1,8 @@
 import React,{useState} from 'react'
 import { useDispatch } from 'react-redux';
-import { addItem } from '../../../redux/slices/cartSlice';
 import ProductPopUPdialog from './ProductPopUPdialog';
-// import { useDispatch } from 'react-redux';
 
-function Shoppingproducts(props) {
+function Shoppingproduct(props) {
     const dispatch = useDispatch();
     const [popupFlag,setPopupFlag] = useState(false);
 
@@ -20,8 +18,6 @@ function Shoppingproducts(props) {
         <p>${props.price}</p>
         <p>Category: {props.category}</p>
         <button onClick={() => {
-        // setButtonPopup(true);
-        dispatch(addItem({props}));
         handleprocart();
       }} className='add-to-cart-btn'>Add to cart</button>
       {popupFlag ?
@@ -30,4 +26,4 @@ function Shoppingproducts(props) {
   );
 }
 
-export default Shoppingproducts;
+export default Shoppingproduct;

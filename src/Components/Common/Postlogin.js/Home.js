@@ -1,9 +1,10 @@
 import React from 'react';
 import Header from './Header';
+import shoppingimage from '../Assets/bg.jpg'
 import { useState,useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import ProductPopUPdialog from './ProductPopUPdialog';
-import Shoppingproducts from './Shoppingproducts';
+import Shoppingproducts from './Shoppingproduct';
 function Home() {
     const [products,updateProducts] = useState([]);
     const [searchInput,setSearchInput]= useState('');
@@ -13,7 +14,7 @@ function Home() {
 
     useEffect(() =>{
         getProducts();
-    },[]);
+    },[updateProducts]);
 
     async function getProducts() {
         let res = await fetch("https://fakestoreapi.com/products");
@@ -34,21 +35,18 @@ function Home() {
     };
     
 
-
-
-
-
-
-
-
-
     return(
         <div className='product-list-container'>
             <div className='Home'>
                 <Header/>
             <div className='hero'>
                 <div className='card3 text-bg-dark text-white border-0'>
+                    <img src={shoppingimage} className="card3-img" alt="Background" height="950px" />
                     <div className='card3-img-overlay d-flex flex-column justify-content-center'>
+                    <div className="container">
+                        <h5 className="card3-title display-3 fw-bolder mb-0">NEW SEASON ARRIVALS</h5>
+                        <p className="card3-text lead fs-2">CHECK OUT ALL THE TRENDS</p>
+                        </div>
                         <div className='myDiv1'>
                             <input type='text' pattern='/^[A-Za-z]+$/' placeholder='search product'
                              onChange={handleChange}

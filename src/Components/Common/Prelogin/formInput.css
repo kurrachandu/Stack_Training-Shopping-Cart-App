@@ -2,7 +2,7 @@ input
 {
 
     padding: 15px;
-    margin: 10px;
+    margin: 7px;
     border-radius: 5px;
     border: 1px solid gray;
 }
@@ -10,6 +10,8 @@ input
     display: flex;
     flex-direction: column;
     width: 280px;
+    height: 15vh;
+    margin: 10px;
 }card
 label{
     font-size: 12px;

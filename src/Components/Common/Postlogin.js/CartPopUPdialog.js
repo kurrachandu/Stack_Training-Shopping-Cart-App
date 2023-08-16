@@ -8,4 +8,4 @@ function CartPopUPdialog() {
   )
 }
 
-export default CartPopUPdialog;
+export default CartPopUPdialog

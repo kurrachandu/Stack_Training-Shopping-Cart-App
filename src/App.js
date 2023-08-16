@@ -5,10 +5,7 @@ import Login from './Components/Common/Prelogin/Login';
 import  {BrowserRouter,Routes,Route, Link} from 'react-router-dom';
 import Create from './Components/Common/Prelogin/Create';
 import Success from './Components/Common/Postlogin.js/Success';
-
-
-
-
+import Shoppingprod from './Components/Common/Postlogin.js/Shoppingprod';
 
 function App(){
   return(
@@ -18,6 +15,7 @@ function App(){
         <Route path='/' element={<Create/>}/>
         <Route path='/home' element={<Home/>}/>
         <Route path='/login' element={<Login/>}/>
+        <Route path='/shoppingprod' element={<Shoppingprod/>}/>
         <Route path='/success' element={<Success/>}/>
         
       </Routes>

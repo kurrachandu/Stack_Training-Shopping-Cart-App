@@ -22,10 +22,10 @@ function Header(){
     return(
         <div className="header-list">
             <p onClick={()=> navigate("/home")}>Home</p>
-            <p onClick={() => navigate("")}>Products</p>
+            <p onClick={() => navigate("/shoppingprod")}>Products</p>
             <p onClick={handlecart}>
             <FontAwesomeIcon icon={faShoppingCart} />
-            Cart ({items.length})
+            Cart ()
             </p>
             <p className="log-out" onClick={()=>navigate("/success")}>
                 Logout
