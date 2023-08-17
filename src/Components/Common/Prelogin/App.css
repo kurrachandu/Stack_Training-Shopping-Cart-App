@@ -124,6 +124,7 @@ display: flex;
   width: 250px;
   padding: 16px;
   border-radius: 5px;
+  flex-direction: column;
   /* border: 1px solid gray; */
 }
 
@@ -134,6 +135,9 @@ display: flex;
   /* border: 1px solid black; */
 }
 
+.card p{
+  margin: 0px;
+}
 .cart-page{
   width: 250px;
   padding: 16px;
@@ -190,7 +194,7 @@ display: flex;
 .add-to-cart-btn 
 {
   background-color: #399c00;
-  margin-right: 40px;
+  margin-right: 0px;
           color: #ffffff;
           padding: 10px;
           border-radius: 4px;
@@ -438,7 +442,7 @@ display: flex;
   padding: 5px 10px;
   margin-right: 150px;
   margin-left: 5px;
-  margin-bottom: 0px;
+  margin-bottom: -25px;
 }
 
 

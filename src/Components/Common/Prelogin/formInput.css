@@ -10,8 +10,8 @@ input
     display: flex;
     flex-direction: column;
     width: 280px;
-    height: 15vh;
-    margin: 10px;
+   
+   
 }card
 label{
     font-size: 12px;

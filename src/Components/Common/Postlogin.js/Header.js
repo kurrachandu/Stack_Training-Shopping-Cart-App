@@ -25,7 +25,7 @@ function Header(){
             <p onClick={() => navigate("/shoppingprod")}>Products</p>
             <p onClick={handlecart}>
             <FontAwesomeIcon icon={faShoppingCart} />
-            Cart ()
+            Cart ({items.length})
             </p>
             <p className="log-out" onClick={()=>navigate("/success")}>
                 Logout

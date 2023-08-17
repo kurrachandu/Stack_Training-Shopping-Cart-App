@@ -5,30 +5,34 @@ import React, { useState } from 'react';
 
 const Create = () => {
     const navigate = useNavigate();
-    const [values, setValues] = useState({
-      identifier: "", 
+    const [UnameOrEmail, setUnameOrEmail] = useState({
+      username: "", 
       password: ""
     });
+    
 
     const handleSubmit = (e) => 
     {
         e.preventDefault();
         const existingData = JSON.parse(localStorage.getItem('formData')) || [];
         const userData = existingData.find(data => 
-          data.username === values.identifier || data.email === values.identifier
+          data.username === UnameOrEmail.username || data.email === UnameOrEmail.username
         );
 
-        if (!userData || userData.password !== values.password) {
+        if (!userData || userData.password !== UnameOrEmail.password) {
           alert('Invalid credentials');
           return;
         }
-        
-        navigate('/home'); 
+        // else{
+          // localStorage.setItem('loggedUserData',JSON.stringify(UnameOrEmail));
+          navigate('/home'); 
+        // }
+        // navigate('/home'); 
     };
   
     const onChange = (e) =>
      {
-      setValues({ ...values, [e.target.name]: e.target.value });
+      setUnameOrEmail({ ...UnameOrEmail, [e.target.name]: e.target.value });
     };
   
     return (
@@ -37,13 +41,13 @@ const Create = () => {
           <h1>Login</h1>
   
           <FormInput
-            name="identifier" // Changed to "identifier"
+            name="username" // Changed to "identifier"
             type="text"
             placeholder="Username or Email" 
             errorMessage="Username or email should be valid"
             label="Username or Email" // Updated label
             required={true}
-            value={values.identifier}
+            value={UnameOrEmail.username}
             onChange={onChange}
           />
   
@@ -55,7 +59,7 @@ const Create = () => {
             pattern="^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$"
             label="Password"
             required={true}
-            value={values.password}
+            value={UnameOrEmail.password}
             onChange={onChange}
           />
           <button  className = "btn" type="submit">Login</button>
