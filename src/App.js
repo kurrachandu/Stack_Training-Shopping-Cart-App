@@ -1,21 +1,20 @@
-import './Components/Common/Prelogin/App.css';
 import React,{useState, useEffect} from 'react';
-import Home from './Components/Common/Postlogin.js/Home';
-import Login from './Components/Common/Prelogin/Login';
+import Home from './Components/pages/Home/Home';
+import Login from './Components/pages/Auth/Login';
 import  {BrowserRouter,Routes,Route, Link} from 'react-router-dom';
-import Create from './Components/Common/Prelogin/Create';
-import Success from './Components/Common/Postlogin.js/Success';
-import Shoppingprod from './Components/Common/Postlogin.js/Shoppingprod';
+import Create from './Components/pages/Auth/Create';
+import Success from './Components/pages/Logout/Success';
+import Cartpage from './Components/pages/Cart/Cartpage';
 
 function App(){
   return(
     <div className='navbar'>
       <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Create/>}/>
+          <Route path='/' element={<Create/>}/>
         <Route path='/home' element={<Home/>}/>
         <Route path='/login' element={<Login/>}/>
-        <Route path='/shoppingprod' element={<Shoppingprod/>}/>
+        <Route path='/cartpage' element={<Cartpage/>}/>
         <Route path='/success' element={<Success/>}/>
         
       </Routes>

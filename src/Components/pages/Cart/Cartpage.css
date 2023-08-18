@@ -1,0 +1,78 @@
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+  }
+  
+  th,
+  td {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  thead {
+    background-color: #f2f2f2;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  tr:hover {
+    background-color: #ddd;
+  }
+  
+  .image-cell img{
+    width: 30%;
+  }
+  
+  .actions-cell {
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+  }
+  
+  .add-to-cart-btn1{
+    background-color: #1b8800;
+  margin-right: 40px;
+          color: #ffffff;
+          padding: 4%;
+          border-radius: 4px;
+          border: none;
+          cursor: pointer;
+  }
+  .add-to-cart-btn2{
+    background-color: #1b8800;
+    margin-right: 40px;
+    color: #ffffff;
+    padding: 4%;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+  }
+  .remove-from-cart-btn {
+    display: flex;
+    background-color: #d80700;
+    margin-right: 40px;
+    color: #ffffff;
+    padding: 5px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    padding-bottom: 5px;
+  }
+  .total-price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  

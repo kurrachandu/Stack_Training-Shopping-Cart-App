@@ -1,15 +1,14 @@
 import React ,{ useState }from 'react'
-import '../Prelogin/formInput.css';
-
+import '../Auth/formInput.css';
 
 const FormInput = (props) => {
   const [focused, setFocused] = useState(false);
     const {label,errorMessage, onChange,id, ...inputprops } = props;
 
-
     const handleFocus = (e) => {
       setFocused(true);
     }
+    
   return (
     <div className = "formInput">
       

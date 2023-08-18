@@ -10,11 +10,27 @@ function Shoppingproduct(props) {
     function handleprocart(){
         setPopupFlag(true);
     }
+// function handleAddToCart(){
 
+//   dispatch(addItem({props}));
+
+//   const existingCartData = JSON.parse(localStorage.getItem('cartData')) || {};
+
+//   const loggedUser = "user@125";
+
+//   const userCartData = existingCartData[loggedUser] || [];
+//   userCartData.push(props);
+
+//   existingCartData[loggedUser] = userCartData;
+
+//   localStorage.setItem('cartData', JSON.stringify(existingCartData));
+//   handleprocart();
+// }
 
   return (
     <div className='card'>
         <img src={props.image} alt={props.title}/>
+        <p>{props.id}</p>
         <p>{props.title}</p>
         <p>Rs {props.price}</p>
         <p>Category: {props.category}</p>
@@ -22,6 +38,7 @@ function Shoppingproduct(props) {
           dispatch(addItem({props}));
         handleprocart();
       }} className='add-to-cart-btn'>Add to cart</button>
+      {/* <button onClick={handleAddToCart} className='add-to-cart-btn'>Add to cart</button> */}
       {popupFlag ?
       <ProductPopUPdialog setPopupFlag={setPopupFlag} />: null}
     </div>

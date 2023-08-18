@@ -1,0 +1,18 @@
+.header-list {
+    display: flex;
+    /* justify-content: space-between; */
+    height: 60px;
+    font-size: medium;
+    padding: 10px;
+    background-color: rgb(12, 12, 12);
+    color: #f2f2f2;
+    cursor: pointer;
+    font-style: 18px;
+  }
+  .header-list p {
+    margin-left: 13%;
+    padding-left: 10px;
+  }
+  .header-lis .log-out{
+    padding: 0px;
+    }

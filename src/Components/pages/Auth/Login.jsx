@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import FormInput from './FormInput';
-import "../Prelogin/App.css";
+import "../../../../src/App.css";
 import { useNavigate } from 'react-router-dom';
 
 const PostLogin = () => {

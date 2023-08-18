@@ -37,10 +37,12 @@
   font-style: 18px;
 }
 .header-list p {
-  margin-left: 13%;
+  margin-left: 25%;
   padding-left: 10px;
 }
-
+.header-lis .log-out{
+padding: 0px;
+}
 
 form{
   background-color: rgb(61 247 107 / 36%);
@@ -113,7 +115,6 @@ h6{
 display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    width: 250px;
     border-radius: 5px;
     padding: 16px;
     margin: 20px;
@@ -121,7 +122,6 @@ display: flex;
     align-items: center;
     justify-content: center;
     align-content: center;
-  width: 250px;
   padding: 16px;
   border-radius: 5px;
   flex-direction: column;

@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from './Header';
-import shoppingimage from '../Assets/bg.jpg'
+import Header from '../../Header/Header';
+import shoppingimage from '../../../Assets//bg.jpg'
 import { useState,useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import ProductPopUPdialog from './ProductPopUPdialog';
@@ -14,7 +14,7 @@ function Home() {
 
     useEffect(() =>{
         getProducts();
-    },[updateProducts]);
+    },[products]);
 
     async function getProducts() {
         let res = await fetch("https://fakestoreapi.com/products");
@@ -56,6 +56,7 @@ function Home() {
                                     searchResults.map((props) =>(
                                         <div className='card'>
                                             <img  src={props.image} alt= {props.title}/>
+                                            <p>{props.id}</p>
                                             <p>{props.title}</p>
                                             <p>${props.price}</p>
                                             <p>Category: {props.category}</p>
