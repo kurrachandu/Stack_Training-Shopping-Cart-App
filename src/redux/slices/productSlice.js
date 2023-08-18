@@ -4,6 +4,16 @@ const productSlice = createSlice ({
     name : "products",
     initialState : [],
     reducers : {
+        setProducts: (state, action) => {
+            state.products = action.payload;
+        },
+        setSearchKeyword: (state, action) => {
+            state.setSearchKeyword = action.payload;
+        },
+        addItem: (state,action) => {
+            const NewItem = action.payload;
+            state.products.push(NewItem);
+        },
         
     }
 });
