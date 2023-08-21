@@ -1,31 +1,53 @@
 import React,{useState} from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 import ProductPopUPdialog from './ProductPopUPdialog';
-import { addItem } from '../../../redux/slices/cartSlice';
+import { addItem,removeItem } from '../../../redux/slices/cartSlice';
 
 function Shoppingproduct(props) {
     const dispatch = useDispatch();
     const [popupFlag,setPopupFlag] = useState(false);
+    const loggedInUser = localStorage.getItem('loggedUserData');
+    const cartItems = useSelector(state => state.Cart);
 
     function handleprocart(){
         setPopupFlag(true);
     }
-// function handleAddToCart(){
+    function handleAddToCart() {
+      dispatch(addItem({ props }));
+  
+      // Retrieve existing cart data from local storage
+      const existingCartData = JSON.parse(localStorage.getItem('cartData')) || {};
+  
+      // Create or update the user's cart data
+      const userCartData = existingCartData[loggedInUser] || [];
+      userCartData.push(props);
+      existingCartData[loggedInUser] = userCartData;
+  
+      // Save updated cart data to local storage
+      localStorage.setItem('cartData', JSON.stringify(existingCartData));
+  
+      handleprocart();
+    }
 
-//   dispatch(addItem({props}));
+    function handleRemoveFromCart() {
+      // Remove the item from the cart data
+      dispatch(removeItem({ props }));
+  
+      // Retrieve existing cart data from local storage
+      const existingCartData = JSON.parse(localStorage.getItem('cartData')) || {};
+  
+      // Get the user's cart data
+      const userCartData = existingCartData[loggedInUser] || [];
+      
+      // Remove the item from local storage cart data
+      const updatedCartData = userCartData.filter(item => item.id !== props.id);
+      existingCartData[loggedInUser] = updatedCartData;
+  
+      // Save updated cart data to local storage
+      localStorage.setItem('cartData', JSON.stringify(existingCartData));
+    }
 
-//   const existingCartData = JSON.parse(localStorage.getItem('cartData')) || {};
-
-//   const loggedUser = "user@125";
-
-//   const userCartData = existingCartData[loggedUser] || [];
-//   userCartData.push(props);
-
-//   existingCartData[loggedUser] = userCartData;
-
-//   localStorage.setItem('cartData', JSON.stringify(existingCartData));
-//   handleprocart();
-// }
+  
 
   return (
     <div className='card'>
@@ -34,11 +56,15 @@ function Shoppingproduct(props) {
         <p>{props.title}</p>
         <p>Rs {props.price}</p>
         <p>Category: {props.category}</p>
-        <button onClick={() => {
+        {/* <button onClick={() => {
           dispatch(addItem({props}));
         handleprocart();
-      }} className='add-to-cart-btn'>Add to cart</button>
-      {/* <button onClick={handleAddToCart} className='add-to-cart-btn'>Add to cart</button> */}
+      }} className='add-to-cart-btn'>Add to cart</button> */}
+      <button onClick={handleAddToCart} className='add-to-cart-btn'>Add to cart</button>
+
+      <button onClick={handleRemoveFromCart} className='remove-from-cart-btn'>
+        Remove
+      </button>
       {popupFlag ?
       <ProductPopUPdialog setPopupFlag={setPopupFlag} />: null}
     </div>
